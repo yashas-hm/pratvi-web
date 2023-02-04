@@ -1,9 +1,9 @@
 class AppConstants{
 
   // INFO: Assets
-  static const String firework1 = 'assets/anim/fireworks1.json';
+  static const String firework1 = 'assets/anim/firework1.json';
 
-  static const String firework2 = 'assets/anim/fireworks2.json';
+  static const String firework2 = 'assets/anim/firework2.json';
 
   static const String logo = 'assets/images/pratvi_logo.svg';
 
