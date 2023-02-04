@@ -1,8 +1,10 @@
+// ignore: avoid_web_libraries_in_flutter
 import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';
+import 'package:pratvi_web/core/app_constants.dart';
 
 class MobileScreen extends StatefulWidget {
   const MobileScreen({Key? key}) : super(key: key);
@@ -43,7 +45,7 @@ class _MobileScreenState extends State<MobileScreen> with SingleTickerProviderSt
               ),
               alignment: Alignment.topRight,
               child: Lottie.asset(
-                'assets/anim/firework1.json',
+                AppConstants.firework1,
                 repeat: true,
               ),
             ),
@@ -56,7 +58,7 @@ class _MobileScreenState extends State<MobileScreen> with SingleTickerProviderSt
               ),
               alignment: Alignment.centerLeft,
               child: Lottie.asset(
-                'assets/anim/firework2.json',
+                AppConstants.firework2,
                 repeat: true,
               ),
             ),
@@ -77,7 +79,7 @@ class _MobileScreenState extends State<MobileScreen> with SingleTickerProviderSt
                         end: 1.0,
                       ).animate(scaleAnimController),
                       child: SvgPicture.asset(
-                        'assets/images/pratvi_logo.svg',
+                        AppConstants.logo,
                         height: screenSize.width/3.5,
                       ),
                     ),
@@ -127,19 +129,19 @@ class _MobileScreenState extends State<MobileScreen> with SingleTickerProviderSt
                       children: [
                         GestureDetector(
                           onTap: () => window.open(
-                              'https://stackoverflow.com/questions/ask',
+                              AppConstants.playStoreApp,
                               'new tab'),
                           child: SvgPicture.asset(
-                            'assets/images/playstore.svg',
+                            AppConstants.playStore,
                             height: screenSize.width / 10,
                           ),
                         ),
                         GestureDetector(
                           onTap: () => window.open(
-                              'https://stackoverflow.com/questions/ask',
+                              AppConstants.appStoreApp,
                               'new tab'),
                           child: SvgPicture.asset(
-                            'assets/images/appstore.svg',
+                            AppConstants.appStore,
                             height: screenSize.width / 10,
                           ),
                         ),
