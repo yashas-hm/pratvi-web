@@ -7,12 +7,8 @@ class AppConstants{
 
   static const String logo = 'assets/images/pratvi_logo.svg';
 
-  static const String appStore = 'assets/images/appstore.svg';
-
-  static const String playStore = 'assets/images/playstore.svg';
-
   // INFO: Links
-  static const String playStoreApp = 'https://play.google.com/store/';
+  static const String playStoreApp = 'https://drive.google.com/uc?export=download&id=16clhYJZ6ky5VY4asxVGrisZ-n8WeaFQx';
 
-  static const String appStoreApp = 'https://www.apple.com/in/app-store/';
+  static const String appStoreApp = 'https://yashas-hm.github.io/pratvi-website/';
 }

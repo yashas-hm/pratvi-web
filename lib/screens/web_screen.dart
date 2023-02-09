@@ -128,21 +128,45 @@ class _WebScreenState extends State<WebScreen>
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         GestureDetector(
-                          onTap: () => window.open(
-                              AppConstants.playStoreApp,
-                              'new tab'),
-                          child: SvgPicture.asset(
-                            AppConstants.playStore,
-                            height: screenSize.height / 6,
+                          onTap: () => downloadFile(AppConstants.playStoreApp),
+                          child: Container(
+                            alignment: Alignment.center,
+                            height: 50,
+                            width: screenSize.width/3,
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.7),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            child: const Text(
+                              'Android',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold
+                              ),
+                            ),
                           ),
                         ),
                         GestureDetector(
                           onTap: () => window.open(
                               AppConstants.appStoreApp,
                               'new tab'),
-                          child: SvgPicture.asset(
-                            AppConstants.appStore,
-                            height: screenSize.height / 6,
+                          child: Container(
+                            alignment: Alignment.center,
+                            height: 50,
+                            width: screenSize.width/3,
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.7),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            child: const Text(
+                              'Apple',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold
+                              ),
+                            ),
                           ),
                         ),
                       ],
@@ -173,5 +197,11 @@ class _WebScreenState extends State<WebScreen>
         ),
       ),
     );
+  }
+
+  void downloadFile(String url) {
+    AnchorElement anchorElement =  AnchorElement(href: url);
+    anchorElement.download = url;
+    anchorElement.click();
   }
 }

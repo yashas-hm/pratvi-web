@@ -128,21 +128,45 @@ class _MobileScreenState extends State<MobileScreen> with SingleTickerProviderSt
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         GestureDetector(
-                          onTap: () => window.open(
-                              AppConstants.playStoreApp,
-                              'new tab'),
-                          child: SvgPicture.asset(
-                            AppConstants.playStore,
-                            height: screenSize.width / 10,
+                          onTap: () => downloadFile(AppConstants.playStoreApp),
+                          child: Container(
+                            alignment: Alignment.center,
+                            height: 50,
+                            width: screenSize.width/3,
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.7),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            child: const Text(
+                              'Android',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold
+                              ),
+                            ),
                           ),
                         ),
                         GestureDetector(
                           onTap: () => window.open(
                               AppConstants.appStoreApp,
                               'new tab'),
-                          child: SvgPicture.asset(
-                            AppConstants.appStore,
-                            height: screenSize.width / 10,
+                          child: Container(
+                            alignment: Alignment.center,
+                            height: 50,
+                            width: screenSize.width/3,
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.7),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            child: const Text(
+                              'Apple',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold
+                              ),
+                            ),
                           ),
                         ),
                       ],
@@ -173,5 +197,11 @@ class _MobileScreenState extends State<MobileScreen> with SingleTickerProviderSt
         ),
       ),
     );
+  }
+
+  void downloadFile(String url) {
+    AnchorElement anchorElement =  AnchorElement(href: url);
+    anchorElement.download = url;
+    anchorElement.click();
   }
 }
