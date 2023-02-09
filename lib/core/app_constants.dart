@@ -8,7 +8,7 @@ class AppConstants{
   static const String logo = 'assets/images/pratvi_logo.svg';
 
   // INFO: Links
-  static const String playStoreApp = 'https://drive.google.com/uc?export=download&id=16clhYJZ6ky5VY4asxVGrisZ-n8WeaFQx';
+  static const String playStoreApp = 'https://play.google.com/store/apps/details?id=com.wedding.pratvi';
 
   static const String appStoreApp = 'https://yashas-hm.github.io/pratvi-website/';
 }

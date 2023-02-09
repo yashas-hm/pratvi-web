@@ -128,7 +128,9 @@ class _MobileScreenState extends State<MobileScreen> with SingleTickerProviderSt
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         GestureDetector(
-                          onTap: () => downloadFile(AppConstants.playStoreApp),
+                          onTap: () => window.open(
+                              AppConstants.playStoreApp,
+                              'new tab'),
                           child: Container(
                             alignment: Alignment.center,
                             height: 50,
@@ -197,11 +199,5 @@ class _MobileScreenState extends State<MobileScreen> with SingleTickerProviderSt
         ),
       ),
     );
-  }
-
-  void downloadFile(String url) {
-    AnchorElement anchorElement =  AnchorElement(href: url);
-    anchorElement.download = url;
-    anchorElement.click();
   }
 }
